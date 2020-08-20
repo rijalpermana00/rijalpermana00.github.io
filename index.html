@@ -13,19 +13,9 @@
 
 		function getDateTime() {
 		    var now     = new Date(); 
-		    var year    = now.getFullYear()-1;
-		    var month   = now.getMonth()+6; 
-		    var day     = now.getDate();
 		    var hour    = now.getHours();
 		    var minute  = now.getMinutes();
 		    var second  = now.getSeconds(); 
-		    if(month.toString().length == 1) {
-		        var month = '0'+month;
-		    }
-		    if(day.toString().length == 1) {
-		        var day = '0'+day;
-		    }  
-		    console.log(hour.toString().length) ;
 		    if(hour.toString().length == 1) {
 		        var hour = '0'+hour;
 		    }
@@ -35,7 +25,7 @@
 		    if(second.toString().length == 1) {
 		        var second = '0'+second;
 		    }   
-		    var dateTime = day+'/'+month+'/'+year;   
+		    var dateTime = hour+':'+minute+':'+second;   
 		     return dateTime;
 		}
 	</script>
