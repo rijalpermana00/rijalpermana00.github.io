@@ -2,13 +2,16 @@
 	Testing IOT
 </head>
 <body>
-	<h1 class="nama">ILY Sani Asmi</h1>
+	<h1 class="first">ILY Sani Asmi</h1>
+	<h1 class="second" id="clock-wrapper"></h1>
 	<script type="text/javascript">
-		var start = new Date;
-
 		setInterval(function() {
-			console.log((new Date - start) / 1000 + " Seconds");
-		}, 1000);
+		    var date = new Date();
+		    $('#clock-wrapper').html(
+		        date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds()
+		        );
+		}, 500);
 	</script>
 </body>
+
 
