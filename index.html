@@ -1,8 +1,35 @@
 <html>
 <body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 <div class="content">
-<h1>ILY Sani Asmi</h1>
-<h2><?php echo(date("h:i:sa"))?></h2>
+<h1 class="first">ILY Sani Asmi</h1>
+<h2 class="second" id="clock-wrapper"></h2>
 </div>
+<script type="text/javascript">
+	setInterval(function() {
+	    var date = new Date();
+	    $('#clock-wrapper').html(
+	 			getDateTime()
+	        );
+	}, 500);
+
+	function getDateTime() {
+	    var now     = new Date(); 
+	    var hour    = now.getHours();
+	    var minute  = now.getMinutes();
+	    var second  = now.getSeconds(); 
+	    if(hour.toString().length == 1) {
+	        var hour = '0'+hour;
+	    }
+	    if(minute.toString().length == 1) {
+	        var minute = '0'+minute;
+	    }
+	    if(second.toString().length == 1) {
+	        var second = '0'+second;
+	    }   
+	    var dateTime = hour+':'+minute+':'+second;   
+	     return dateTime;
+	}
+</script>
 </body>
 </html>
